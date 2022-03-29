@@ -8,15 +8,15 @@ export class User {
   @Column({ length: 50 })
   nombre: string;
 
-  @Column({ length: 16 })
+  @Column({ length: 16, unique: true })
   username: string;
 
   @Column({ length: 80 })
   password: string;
 
-  @Column({ name: 'api_key', length: 80 })
+  @Column({ name: 'api_key', length: 80, unique: true })
   apiKey: string;
 
-  @Column({})
-  activo: number;
+  @Column({ width: 1, default: true })
+  activo: boolean;
 }

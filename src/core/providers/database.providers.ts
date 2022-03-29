@@ -12,6 +12,9 @@ export const databaseProviders = [
         username: configService.get<string>('MYSQL_USER'),
         password: configService.get<string>('MYSQL_PASSWORD'),
         database: configService.get<string>('MYSQL_DATABASE'),
+        extra: {
+          connectionLimit: configService.get<number>('MYSQL_POOL_SIZE'),
+        },
         entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
       }),
     inject: [ConfigService],
