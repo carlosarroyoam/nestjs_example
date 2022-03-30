@@ -6,6 +6,7 @@
       "request": "launch",
       "name": "Debug Nest Framework",
       "args": ["${workspaceFolder}/src/main.ts"],
+      "autoAttachChildProcesses": true,
       "runtimeArgs": [
         "--nolazy",
         "-r",
